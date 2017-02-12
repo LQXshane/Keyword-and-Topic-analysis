@@ -75,7 +75,7 @@ words=['GM mosquito','GMO mosquito',
                               'genetically modified aedes aegypti',
                               'genetically altered aedes aegypti',
                               'transgenic aedes aegypti', 'OX513A']
-df_res, _ = contain_keyword('mmr_media_sample.csv', words, 'extract/res1.csv')
+df_res, _ = contain_keyword('../mmr_media_stage2.csv', words, 'res_stage2.csv')
 rows = 0
 for x in df_res.Contents:
     if x != '':
