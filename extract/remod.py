@@ -8,6 +8,8 @@ def contain_keyword(input, word_list, path_to_file):
 
     df = pd.read_csv(input, encoding = 'latin-1', )
 
+    print("the original file contains %d rows"%(len(df)))
+
     # cascading keywords with regex
     result = []
     w = "[\#\.\-\+\)\!\@\ \_\*\(\[\]\{\}" + "\'" + '\"]*'
@@ -75,11 +77,13 @@ words=['GM mosquito','GMO mosquito',
                               'genetically modified aedes aegypti',
                               'genetically altered aedes aegypti',
                               'transgenic aedes aegypti', 'OX513A']
-df_res, _ = contain_keyword('../mmr_media_stage2.csv', words, 'res_stage2.csv')
+df_res, _ = contain_keyword('../GMM_Media/mmr_media_stage1.csv', words, '../GMM_Media/pre/res_stage1.csv')
 rows = 0
 for x in df_res.Contents:
     if x != '':
         rows += 1
+    else:
+        print rows
 print "%d of rows returned." %(rows)
 
-embed()
+# embed()
